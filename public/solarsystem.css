@@ -41,6 +41,7 @@ li{
 	transition: 0.5s ease;
 	margin: 4px;
 	padding: auto;
+	cursor: default;
 }
 
 li:hover{
@@ -74,10 +75,11 @@ table{
 }
 
 #solarsystem{
+	float: left;
 	overflow: hidden;
 	position: relative;
 	margin: auto;
-	margin-top: 15px;
+	margin-top: 0px;
 	margin-bottom: 15px;
 	display: inline-block;
 	width: 600px;
@@ -100,14 +102,16 @@ table{
 }
 
 #butts{
+	display: inline-block;
 	position: relative;
 	z-index: 2;
 	float: left;
-	padding-left: 1200px;
+	margin-left: 1200px;
+	transform: scale(0.8);
+	height: 10px;
 }
 
 .style-button{
-	font-family: "Roboto", monospace;
 	color: #eee;
 
 	padding: 5px 10px 5px 10px;
@@ -119,7 +123,7 @@ table{
 	border-radius: 5%;
 	background: linear-gradient(#0a1512, #0a1512);
 	background: -webkit-linear-gradient(#0a1512, #0a1512);
-	
+
 	cursor: pointer;
 }
 
