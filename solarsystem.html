@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Reenie+Beanie|Roboto" rel="stylesheet">
+
+<!-- ICONS -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="solarsystem.css" media="all" />
+
+
+
+<title>Solar system powered by CSS3 and HTML5</title>
+</head>
+
+<body>
+<div id="galaxy">
+	<div id="butts">
+	<div class="style-button" onclick="zoomIn();""><i class="material-icons">add</i></div>
+	<div class="style-button" onclick="zoomOut();"><i class="material-icons">remove</i></div>
+	<div class="style-button" onclick="playOrPause();"><i id="pause" class="material-icons">pause</i></div>
+	</div>
+	<table><td>
+	<div id="menu">
+	<h1>The Solar System</h1>
+	<h4>powered by CSS3 and HTML5</h4>
+		<ul>
+			<li>Sun</li>
+			<li>Mercury</li>
+			<li>Venus</li>
+			<li>Earth</li>
+			<li>Mars</li>
+			<li>Jupiter</li>
+			<li>Saturn</li>
+			<li>Uranus</li>
+			<li>Neptune</li>
+		</ul>
+	</div>
+	</td>
+	<td>
+	<div id="solarsystem">
+		<div id="sun"></div>
+		<div id="mercury_orbit"></div>
+		<div id="venus_orbit"></div>
+		<div id="earth_orbit"></div>
+		<div id="mars_orbit"></div>
+		<div id="jupiter_orbit"></div>
+		<div id="saturn_orbit"></div>
+		<div id="uranus_orbit"></div>
+		<div id="neptune_orbit"></div>
+		<div id="planets">
+			<div id="mercury"></div>
+			<div id="venus"></div>
+			<div id="earth" title="Earth"></div>
+			<div id="mars"></div>
+			<div id="jupiter"></div>
+			<div id="saturn"></div>
+			<div id="uranus"></div>
+			<div id="neptune"></div>
+		</div>
+	</div>
+	</td></table>
+</div>
+
+<div class="footer">
+love astronomy &hearts; @lerami
+</div>
+
+
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$('#solarsystem').draggable();
+
+$('#earth').tooltip();
+
+function zoomIn(){
+	$('#solarsystem').animate({zoom : '+=0.5'}, 400);
+}
+
+function zoomOut(){
+	$('#solarsystem').animate({zoom : '-=0.5'}, 400);
+}
+
+// Pause and play functions
+
+var playState = false;
+
+function playOrPause(){
+	if(playState == false){
+		play();
+		$("#pause").html("pause");
+		playState = true;
+	}
+	else{
+		pause();
+		$("#pause").html("play_arrow");
+		playState = false;
+	}
+}
+
+function pause(){
+	$("div#planets > div").css("animation-play-state", "paused");
+}
+
+function play(){
+	$("div#planets > div").css("animation-play-state", "running");
+}
+
+</script>
+</body>
+</html>
