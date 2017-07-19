@@ -1,2 +1,2 @@
 # Solar-System
-A solar system project based (CSS3, jQuery)
+A solar system project (CSS3, jQuery)
